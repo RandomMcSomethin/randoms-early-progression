@@ -1,0 +1,13 @@
+{
+    "replace": false,
+    "values": [
+        "#minecraft:is_forest",
+        "#minecraft:is_taiga",
+        "minecraft:stony_peaks",
+        "minecraft:cherry_grove",
+        "#c:plains",
+        "#c:jungle",
+        "#c:swamp",
+        "#c:stony_shores"
+      ]
+}

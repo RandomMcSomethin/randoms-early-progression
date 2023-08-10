@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "randoms-early-progression:block/flint_rock",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "randoms-early-progression:block/flint_rock"
+    },
+    "facing=south": {
+      "model": "randoms-early-progression:block/flint_rock",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "randoms-early-progression:block/flint_rock",
+      "y": 270
+    }
+  }
+}
