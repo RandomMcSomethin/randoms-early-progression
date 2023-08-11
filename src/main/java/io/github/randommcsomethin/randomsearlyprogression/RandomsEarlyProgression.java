@@ -31,17 +31,18 @@ import net.minecraft.world.gen.feature.PlacedFeature;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class ExampleMod implements ModInitializer {
+public class RandomsEarlyProgression implements ModInitializer {
 	// This logger is used to write text to the console and the log file.
 	// It is considered best practice to use your mod id as the logger's name.
 	// That way, it's clear which mod wrote info, warnings, and errors.
-    public static final Logger LOGGER = LoggerFactory.getLogger("randoms-early-progression");
+	public static final String MODID = "randoms-early-progression";
+    public static final Logger LOGGER = LoggerFactory.getLogger(MODID);
 
-	public static final TagKey<Block> NEEDS_FLINT_TOOL = TagKey.of(RegistryKeys.BLOCK, new Identifier("randoms-early-progression", "needs_flint_tool"));
-	public static final TagKey<Item> FLINT_TOOLS = TagKey.of(RegistryKeys.ITEM, new Identifier("randoms-early-progression", "flint_tools"));
+	public static final TagKey<Block> NEEDS_FLINT_TOOL = TagKey.of(RegistryKeys.BLOCK, new Identifier(MODID, "needs_flint_tool"));
+	public static final TagKey<Item> FLINT_TOOLS = TagKey.of(RegistryKeys.ITEM, new Identifier(MODID, "flint_tools"));
 
-	public static final TagKey<Biome> HAS_ROCKS = TagKey.of(RegistryKeys.BIOME, new Identifier("randoms-early-progression", "has_rocks"));
-	public static final RegistryKey<PlacedFeature> FLINT_ROCKS = RegistryKey.of(RegistryKeys.PLACED_FEATURE, new Identifier("randoms-early-progression", "flint_rocks"));
+	public static final TagKey<Biome> HAS_ROCKS = TagKey.of(RegistryKeys.BIOME, new Identifier(MODID, "has_rocks"));
+	public static final RegistryKey<PlacedFeature> FLINT_ROCKS = RegistryKey.of(RegistryKeys.PLACED_FEATURE, new Identifier(MODID, "flint_rocks"));
 
 	public static final Block FLINT_ROCK = new RockBlock(FabricBlockSettings.copyOf(Blocks.STONE_BUTTON));
 
@@ -68,8 +69,8 @@ public class ExampleMod implements ModInitializer {
 				BiomeSelectors.tag(HAS_ROCKS), GenerationStep.Feature.VEGETAL_DECORATION, FLINT_ROCKS
 		);
 
-		Registry.register(Registries.BLOCK, new Identifier("randoms-early-progression", "flint_rock"), FLINT_ROCK);
-		Registry.register(Registries.ITEM, new Identifier("randoms-early-progression", "flint_rock"), new BlockItem(FLINT_ROCK, new FabricItemSettings()));
+		Registry.register(Registries.BLOCK, new Identifier(MODID, "flint_rock"), FLINT_ROCK);
+		Registry.register(Registries.ITEM, new Identifier(MODID, "flint_rock"), new BlockItem(FLINT_ROCK, new FabricItemSettings()));
 
 		LOGGER.info("Hello Fabric world!");
 	}

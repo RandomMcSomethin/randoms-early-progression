@@ -1,3 +1,6 @@
 {
-  "parent": "randoms-early-progression:block/flint_rock"
+  "parent": "minecraft:block/button_inventory",
+  "textures": {
+    "texture": "minecraft:item/flint"
+  }
 }

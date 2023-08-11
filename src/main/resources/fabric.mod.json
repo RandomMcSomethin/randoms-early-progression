@@ -3,39 +3,31 @@
 	"id": "randoms-early-progression",
 	"version": "${version}",
 	"name": "Random's Early Progression",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": " A simple rework of earlygame tool progression.",
 	"authors": [
-		"Me!"
+		"RandomMcSomethin"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"sources": "https://github.com/RandomMcSomethin/randoms-early-progression"
 	},
-	"license": "CC0-1.0",
+	"license": "MIT",
 	"icon": "assets/randoms-early-progression/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"io.github.randommcsomethin.randomsearlyprogression.ExampleMod"
+			"io.github.randommcsomethin.randomsearlyprogression.RandomsEarlyProgression"
 		],
 		"client": [
-			"io.github.randommcsomethin.randomsearlyprogression.ExampleModClient"
+			"io.github.randommcsomethin.randomsearlyprogression.client.RandomsEarlyProgressionClient"
 		]
 	},
 	"mixins": [
-		"randoms-early-progression.mixins.json",
-		{
-			"config": "randoms-early-progression.client.mixins.json",
-			"environment": "client"
-		}
+		"randoms-early-progression.mixins.json"
 	],
 	"depends": {
 		"fabricloader": ">=0.14.22",
 		"minecraft": "~1.20.1",
 		"java": ">=17",
 		"fabric-api": "*"
-	},
-	"suggests": {
-		"another-mod": "*"
 	}
 }
