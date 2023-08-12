@@ -27,7 +27,7 @@ public abstract class CopperMixin extends LivingEntity {
     @Inject(at = @At("HEAD"), method = "canHarvest(Lnet/minecraft/block/BlockState;)Z", cancellable = true)
     private void canHarvest(BlockState state, CallbackInfoReturnable<Boolean> cir) {
         boolean usingFlintTool = this.inventory.getMainHandStack().isIn(RandomsEarlyProgression.FLINT_TOOLS);
-        if (usingFlintTool && state.isIn(RandomsEarlyProgression.NEEDS_FLINT_TOOL)) {
+        if (usingFlintTool && this.inventory.getMainHandStack().isSuitableFor(state) && state.isIn(RandomsEarlyProgression.NEEDS_FLINT_TOOL)) {
             cir.setReturnValue(true);
         }
     }
