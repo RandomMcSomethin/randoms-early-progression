@@ -1,5 +1,6 @@
 package io.github.randommcsomethin.randomsearlyprogression;
 
+import io.github.randommcsomethin.randomsearlyprogression.mixin.ToolMaterialAccessor;
 import net.fabricmc.api.ModInitializer;
 
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
@@ -12,10 +13,8 @@ import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.fabricmc.fabric.impl.tag.convention.TagRegistration;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroups;
-import net.minecraft.item.Items;
+import net.minecraft.item.*;
+import net.minecraft.recipe.RepairItemRecipe;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
@@ -65,6 +64,18 @@ public class RandomsEarlyProgression implements ModInitializer {
 		FuelRegistry.INSTANCE.remove(Items.WOODEN_HOE);
 		FuelRegistry.INSTANCE.remove(Items.WOODEN_SWORD);
 
+		((ToolMaterialAccessor)Items.WOODEN_AXE).setMaterial(FlintToolMaterial.INSTANCE);
+		((ToolMaterialAccessor)Items.WOODEN_PICKAXE).setMaterial(FlintToolMaterial.INSTANCE);
+		((ToolMaterialAccessor)Items.WOODEN_SHOVEL).setMaterial(FlintToolMaterial.INSTANCE);
+		((ToolMaterialAccessor)Items.WOODEN_HOE).setMaterial(FlintToolMaterial.INSTANCE);
+		((ToolMaterialAccessor)Items.WOODEN_SWORD).setMaterial(FlintToolMaterial.INSTANCE);
+
+		((ToolMaterialAccessor)Items.STONE_AXE).setMaterial(CopperToolMaterial.INSTANCE);
+		((ToolMaterialAccessor)Items.STONE_PICKAXE).setMaterial(CopperToolMaterial.INSTANCE);
+		((ToolMaterialAccessor)Items.STONE_SHOVEL).setMaterial(CopperToolMaterial.INSTANCE);
+		((ToolMaterialAccessor)Items.STONE_HOE).setMaterial(CopperToolMaterial.INSTANCE);
+		((ToolMaterialAccessor)Items.STONE_SWORD).setMaterial(CopperToolMaterial.INSTANCE);
+
 		BiomeModifications.addFeature(
 				BiomeSelectors.tag(HAS_ROCKS), GenerationStep.Feature.VEGETAL_DECORATION, FLINT_ROCKS
 		);
@@ -72,6 +83,6 @@ public class RandomsEarlyProgression implements ModInitializer {
 		Registry.register(Registries.BLOCK, new Identifier(MODID, "flint_rock"), FLINT_ROCK);
 		Registry.register(Registries.ITEM, new Identifier(MODID, "flint_rock"), new BlockItem(FLINT_ROCK, new FabricItemSettings()));
 
-		LOGGER.info("Hello Fabric world!");
+		LOGGER.info("Random's Early Progression has been initialized!");
 	}
 }
